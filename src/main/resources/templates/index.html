@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <link href="/styles.css" rel="stylesheet" />
+    <title>A Dessert For Every Taste</title>
+</head>
+<body>
+<h1>Just Cakes</h1>
+
+<ul>
+    <li th:each="cake: ${cakes}" th:text="${cake}"></li>
+</ul>
+
+<form method="post" action="/add-cake">
+    <label for="id">ID of cake to edit (will make a new cake if empty):</label>
+    <input type="number" name="id" id="id" />
+
+    <!--<label for="diameter">Diameter:</label>-->
+    <!--<input type="number" name="diameter" id="diameter"/>-->
+
+    <br/>
+    <br/>
+
+
+    <label for="isRedVelvet">Red Velvet?</label>
+    <input type="checkbox" name="isRedVelvet" id="isRedVelvet" />
+
+    <br/>
+    <br/>
+
+    <label for="isVanilla">Vanilla Frosting?</label>
+    <input type="checkbox" name="isVanilla" id="isVanilla"/>
+
+    <br/>
+    <br/>
+
+    <label for="hasSprinkles">Add Sprinkles?</label>
+    <input type="checkbox" name="hasSprinkles" id="hasSprinkles"/>
+
+    <br/>
+    <br/>
+
+    <input type="submit" value="My Cake Selection" />
+
+    <br/>
+    <br/>
+</form>
+
+<form method="delete" action="/delete-dessert">
+    <input type="number" name="id" >
+    <input type="Delete">
+
+    <!--<a th:href="@{/delete_id(personId=${user.personId})}"-->
+    <!--class="btn btn-danger">Delete</a>-->
+</form>
+
+</body>
+</html>
